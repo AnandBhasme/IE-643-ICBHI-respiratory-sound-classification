@@ -1,0 +1,58 @@
+[
+ {
+  "file": "147_1b3_Tc_mc_AKGC417L_event_5_label_0.wav",
+  "label": 0,
+  "class_name": "normal",
+  "device": "AKGC417L",
+  "split": "official test"
+ },
+ {
+  "file": "178_2b2_Pr_mc_AKGC417L_event_9_label_0.wav",
+  "label": 0,
+  "class_name": "normal",
+  "device": "AKGC417L",
+  "split": "official test"
+ },
+ {
+  "file": "174_1p3_Ar_mc_AKGC417L_event_3_label_1.wav",
+  "label": 1,
+  "class_name": "crackle",
+  "device": "AKGC417L",
+  "split": "official test"
+ },
+ {
+  "file": "177_2b4_Pl_mc_AKGC417L_event_1_label_1.wav",
+  "label": 1,
+  "class_name": "crackle",
+  "device": "AKGC417L",
+  "split": "official test"
+ },
+ {
+  "file": "149_1b1_Al_sc_Meditron_event_12_label_2.wav",
+  "label": 2,
+  "class_name": "wheeze",
+  "device": "Meditron",
+  "split": "official test"
+ },
+ {
+  "file": "178_1b2_Al_mc_AKGC417L_event_4_label_2.wav",
+  "label": 2,
+  "class_name": "wheeze",
+  "device": "AKGC417L",
+  "split": "official test"
+ },
+ {
+  "file": "156_2b3_Pl_mc_AKGC417L_event_3_label_3.wav",
+  "label": 3,
+  "class_name": "both",
+  "device": "AKGC417L",
+  "split": "official test"
+ },
+ {
+  "file": "175_1b1_Al_sc_Litt3200_event_1_label_3.wav",
+  "label": 3,
+  "class_name": "both",
+  "device": "Litt3200",
+  "split": "official test"
+ }
+]

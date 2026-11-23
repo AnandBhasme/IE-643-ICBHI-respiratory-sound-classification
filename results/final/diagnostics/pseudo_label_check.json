@@ -1,0 +1,10 @@
+{
+  "full_tt_s20000_w2.0_target": {
+    "nearest_test_label_matches_intended": 0.4269047619047619,
+    "n_close_p5": 162,
+    "close_nearest_test_label_matches_intended": 0.7654320987654321,
+    "teacher_argmax_matches_intended": 0.6891666666666667,
+    "teacher_argmax_matches_nearest_test_label": 0.5303571428571429,
+    "close_teacher_argmax_matches_nearest_test_label": 0.9444444444444444
+  }
+}

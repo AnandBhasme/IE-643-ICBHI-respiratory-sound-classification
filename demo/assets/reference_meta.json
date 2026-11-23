@@ -1,0 +1,260 @@
+[
+ {
+  "label": 0,
+  "device": "AKGC417L",
+  "filename": "107_2b3_Pl_mc_AKGC417L_event_1_label_0.wav",
+  "duration": 2.7260000705718994
+ },
+ {
+  "label": 0,
+  "device": "AKGC417L",
+  "filename": "162_2b4_Lr_mc_AKGC417L_event_1_label_0.wav",
+  "duration": 4.540999889373779
+ },
+ {
+  "label": 0,
+  "device": "AKGC417L",
+  "filename": "200_2p3_Ar_mc_AKGC417L_event_0_label_0.wav",
+  "duration": 5.64300012588501
+ },
+ {
+  "label": 0,
+  "device": "LittC2SE",
+  "filename": "103_2b2_Ar_mc_LittC2SE_event_1_label_0.wav",
+  "duration": 3.385999917984009
+ },
+ {
+  "label": 0,
+  "device": "LittC2SE",
+  "filename": "135_2b1_Tc_mc_LittC2SE_event_4_label_0.wav",
+  "duration": 2.4149999618530273
+ },
+ {
+  "label": 0,
+  "device": "LittC2SE",
+  "filename": "141_1b2_Ar_mc_LittC2SE_event_1_label_0.wav",
+  "duration": 4.6570000648498535
+ },
+ {
+  "label": 0,
+  "device": "Meditron",
+  "filename": "105_1b1_Tc_sc_Meditron_event_0_label_0.wav",
+  "duration": 2.243000030517578
+ },
+ {
+  "label": 0,
+  "device": "Meditron",
+  "filename": "120_1b1_Pl_sc_Meditron_event_2_label_0.wav",
+  "duration": 2.5767500400543213
+ },
+ {
+  "label": 0,
+  "device": "Meditron",
+  "filename": "166_1p1_Ar_sc_Meditron_event_0_label_0.wav",
+  "duration": 2.0941874980926514
+ },
+ {
+  "label": 0,
+  "device": "Litt3200",
+  "filename": "112_1p1_Ll_sc_Litt3200_event_0_label_0.wav",
+  "duration": 4.318749904632568
+ },
+ {
+  "label": 0,
+  "device": "Litt3200",
+  "filename": "218_1p1_Ar_sc_Litt3200_event_0_label_0.wav",
+  "duration": 3.4111874103546143
+ },
+ {
+  "label": 1,
+  "device": "AKGC417L",
+  "filename": "107_2b3_Al_mc_AKGC417L_event_1_label_1.wav",
+  "duration": 2.7260000705718994
+ },
+ {
+  "label": 1,
+  "device": "AKGC417L",
+  "filename": "130_2p3_Pl_mc_AKGC417L_event_2_label_1.wav",
+  "duration": 2.0350000858306885
+ },
+ {
+  "label": 1,
+  "device": "AKGC417L",
+  "filename": "156_8b3_Ll_mc_AKGC417L_event_0_label_1.wav",
+  "duration": 2.25
+ },
+ {
+  "label": 1,
+  "device": "LittC2SE",
+  "filename": "106_2b1_Pl_mc_LittC2SE_event_0_label_1.wav",
+  "duration": 2.128000020980835
+ },
+ {
+  "label": 1,
+  "device": "LittC2SE",
+  "filename": "132_2b2_Lr_mc_LittC2SE_event_4_label_1.wav",
+  "duration": 2.2709999084472656
+ },
+ {
+  "label": 1,
+  "device": "LittC2SE",
+  "filename": "181_1b2_Ar_mc_LittC2SE_event_1_label_1.wav",
+  "duration": 6.328000068664551
+ },
+ {
+  "label": 1,
+  "device": "Meditron",
+  "filename": "110_1b1_Pr_sc_Meditron_event_0_label_1.wav",
+  "duration": 3.9079999923706055
+ },
+ {
+  "label": 1,
+  "device": "Meditron",
+  "filename": "157_1b1_Lr_sc_Meditron_event_5_label_1.wav",
+  "duration": 3.1530001163482666
+ },
+ {
+  "label": 1,
+  "device": "Meditron",
+  "filename": "179_1b1_Al_sc_Meditron_event_0_label_1.wav",
+  "duration": 2.742000102996826
+ },
+ {
+  "label": 1,
+  "device": "Litt3200",
+  "filename": "112_1p1_Pl_sc_Litt3200_event_0_label_1.wav",
+  "duration": 2.9516875743865967
+ },
+ {
+  "label": 1,
+  "device": "Litt3200",
+  "filename": "218_1p1_Pr_sc_Litt3200_event_0_label_1.wav",
+  "duration": 3.2201249599456787
+ },
+ {
+  "label": 2,
+  "device": "AKGC417L",
+  "filename": "107_2b4_Al_mc_AKGC417L_event_4_label_2.wav",
+  "duration": 2.36899995803833
+ },
+ {
+  "label": 2,
+  "device": "AKGC417L",
+  "filename": "130_1p4_Ll_mc_AKGC417L_event_6_label_2.wav",
+  "duration": 2.7850000858306885
+ },
+ {
+  "label": 2,
+  "device": "AKGC417L",
+  "filename": "158_1p3_Tc_mc_AKGC417L_event_2_label_2.wav",
+  "duration": 2.4040000438690186
+ },
+ {
+  "label": 2,
+  "device": "LittC2SE",
+  "filename": "103_2b2_Ar_mc_LittC2SE_event_0_label_2.wav",
+  "duration": 2.885999917984009
+ },
+ {
+  "label": 2,
+  "device": "LittC2SE",
+  "filename": "140_2b3_Tc_mc_LittC2SE_event_7_label_2.wav",
+  "duration": 2.2860000133514404
+ },
+ {
+  "label": 2,
+  "device": "LittC2SE",
+  "filename": "192_2b2_Ar_mc_LittC2SE_event_4_label_2.wav",
+  "duration": 2.7850000858306885
+ },
+ {
+  "label": 2,
+  "device": "Meditron",
+  "filename": "110_1p1_Ll_sc_Meditron_event_0_label_2.wav",
+  "duration": 3.955312490463257
+ },
+ {
+  "label": 2,
+  "device": "Meditron",
+  "filename": "201_1b1_Ar_sc_Meditron_event_2_label_2.wav",
+  "duration": 3.1570000648498535
+ },
+ {
+  "label": 2,
+  "device": "Meditron",
+  "filename": "206_1b1_Lr_sc_Meditron_event_3_label_2.wav",
+  "duration": 2.5999999046325684
+ },
+ {
+  "label": 2,
+  "device": "Litt3200",
+  "filename": "112_1p1_Ll_sc_Litt3200_event_3_label_2.wav",
+  "duration": 3.5420000553131104
+ },
+ {
+  "label": 2,
+  "device": "Litt3200",
+  "filename": "218_1p1_Ar_sc_Litt3200_event_5_label_2.wav",
+  "duration": 5.953999996185303
+ },
+ {
+  "label": 3,
+  "device": "AKGC417L",
+  "filename": "107_2b3_Ar_mc_AKGC417L_event_1_label_3.wav",
+  "duration": 2.7260000705718994
+ },
+ {
+  "label": 3,
+  "device": "AKGC417L",
+  "filename": "130_1p3_Ar_mc_AKGC417L_event_4_label_3.wav",
+  "duration": 3.2980000972747803
+ },
+ {
+  "label": 3,
+  "device": "AKGC417L",
+  "filename": "158_1p2_Pr_mc_AKGC417L_event_2_label_3.wav",
+  "duration": 2.503999948501587
+ },
+ {
+  "label": 3,
+  "device": "LittC2SE",
+  "filename": "141_1b1_Pr_mc_LittC2SE_event_3_label_3.wav",
+  "duration": 5.057000160217285
+ },
+ {
+  "label": 3,
+  "device": "LittC2SE",
+  "filename": "221_2b1_Al_mc_LittC2SE_event_2_label_3.wav",
+  "duration": 5.013999938964844
+ },
+ {
+  "label": 3,
+  "device": "Meditron",
+  "filename": "110_1p1_Al_sc_Meditron_event_0_label_3.wav",
+  "duration": 3.979062557220459
+ },
+ {
+  "label": 3,
+  "device": "Meditron",
+  "filename": "201_1b2_Al_sc_Meditron_event_2_label_3.wav",
+  "duration": 3.2860000133514404
+ },
+ {
+  "label": 3,
+  "device": "Meditron",
+  "filename": "218_1b1_Ar_sc_Meditron_event_12_label_3.wav",
+  "duration": 5.289000034332275
+ },
+ {
+  "label": 3,
+  "device": "Litt3200",
+  "filename": "112_1p1_Pl_sc_Litt3200_event_2_label_3.wav",
+  "duration": 2.8262500762939453
+ },
+ {
+  "label": 3,
+  "device": "Litt3200",
+  "filename": "218_1p1_Pr_sc_Litt3200_event_3_label_3.wav",
+  "duration": 4.117000102996826
+ }
+]

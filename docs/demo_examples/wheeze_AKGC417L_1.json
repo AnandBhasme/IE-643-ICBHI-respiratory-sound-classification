@@ -1,0 +1,42 @@
+{
+ "requested": "wheeze",
+ "device": "AKGC417L",
+ "nearest_real": {
+  "label": 2,
+  "device": "AKGC417L",
+  "filename": "130_1p4_Ll_mc_AKGC417L_event_6_label_2.wav",
+  "duration": 2.7850000858306885
+ },
+ "classifiers": {
+  "T_K3 (SpecDiff + soft labels, final model)": {
+   "synthetic": {
+    "normal": 0.6876,
+    "crackle": 0.0628,
+    "wheeze": 0.2429,
+    "both": 0.0067
+   },
+   "nearest_real": {
+    "normal": 0.0158,
+    "crackle": 0.0002,
+    "wheeze": 0.984,
+    "both": 0.0001
+   },
+   "synthetic_recognised_as_requested": false
+  },
+  "M0 (real data only, baseline)": {
+   "synthetic": {
+    "normal": 0.9177,
+    "crackle": 0.0078,
+    "wheeze": 0.0742,
+    "both": 0.0004
+   },
+   "nearest_real": {
+    "normal": 0.0055,
+    "crackle": 0.0,
+    "wheeze": 0.9944,
+    "both": 0.0001
+   },
+   "synthetic_recognised_as_requested": false
+  }
+ }
+}

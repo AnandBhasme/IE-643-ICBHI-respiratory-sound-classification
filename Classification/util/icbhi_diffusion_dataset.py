@@ -158,6 +158,59 @@ class ICBHIDataset(Dataset):
             self.audio_images.append((audio_image, int(label))) if self.args.meta_mode == 'none' else self.audio_images.append((audio_image, int(label), meta_label))
             
             
+        # ------------------------------------------------------------------
+        # Novelty phase: extra training items listed in a CSV manifest.
+        #   kind=synth    -> a generated log-mel (already in AST-normalised
+        #                    units) read from row `index` of the .npy pool `source`
+        #   kind=real_dup -> a duplicate of the real training cycle `source`
+        #                    (classical oversampling control)
+        self.n_base_items = len(self.audio_images)
+        extra_manifest = getattr(self.args, 'extra_manifest', None)
+        if self.train_flag and extra_manifest:
+            if self.view != 'mel' or self.args.raw_augment:
+                raise ValueError('--extra_manifest requires --view mel and --raw_augment 0')
+            import csv as _csv
+            with open(extra_manifest, newline='', encoding='utf-8') as f:
+                extra_rows = list(_csv.DictReader(f))
+            name_to_item = {os.path.basename(path): item for path, item in zip(self.data_glob, self.audio_images)}
+            pools = {}
+            teachers = {}
+            # item index -> soft class target (only for synthetic rows with a 'teacher' column)
+            self.soft_targets = {}
+            n_synth = n_dup = 0
+            for row in extra_rows:
+                label = int(row['label'])
+                if row['kind'] == 'synth':
+                    if '/diag/' in row['source']:
+                        raise AssertionError('Diagnostic-only pools must never enter training')
+                    if row['source'] not in pools:
+                        pools[row['source']] = np.load(row['source'], mmap_mode='r')
+                    image = np.asarray(pools[row['source']][int(row['index'])], dtype=np.float32)[..., None]
+                    if image.shape != (498, 128, 1):
+                        raise ValueError(f'Unexpected synthetic log-mel shape {image.shape}')
+                    meta_label = get_meta_infor(None, 'gen', self.args)
+                    item = ([image], label) if self.args.meta_mode == 'none' else ([image], label, meta_label)
+                    n_synth += 1
+                    if row.get('teacher'):
+                        if row['teacher'] not in teachers:
+                            teachers[row['teacher']] = np.load(row['teacher'])
+                        self.soft_targets[len(self.audio_images)] = np.asarray(
+                            teachers[row['teacher']][int(row['index'])], dtype=np.float32)
+                elif row['kind'] == 'real_dup':
+                    if row['source'] not in name_to_item:
+                        raise KeyError(f"real_dup source {row['source']} is not in the active real training set")
+                    item = name_to_item[row['source']]
+                    if item[1] != label:
+                        raise ValueError(f"Label mismatch for duplicated cycle {row['source']}")
+                    n_dup += 1
+                else:
+                    raise ValueError(f"Unknown extra-manifest kind: {row['kind']}")
+                self.audio_images.append(item)
+                self.data_glob.append(f"extra::{row['kind']}::{row['source']}::{row.get('index', '')}")
+            print(f'Extra training items from {extra_manifest}: synthetic={n_synth}, duplicated real={n_dup}')
+            print('Training class counts with extras:',
+                  np.bincount([item[1] for item in self.audio_images], minlength=4).tolist())
+
         '''
         self.class_nums = np.zeros(args.n_cls)
         self.class_nums[sample[1]] += 1
@@ -188,6 +241,16 @@ class ICBHIDataset(Dataset):
             audio_image = self.transform(audio_image)
         
         if self.train_flag:
+            if getattr(self.args, 'soft_extra', False):
+                # [label, target_0..3]: hard one-hot for real items; for synthetic items the
+                # teacher soft label mixed with the intended class by --soft_beta.
+                target = np.zeros(4, dtype=np.float32)
+                target[label] = 1.0
+                soft = getattr(self, 'soft_targets', {}).get(index)
+                if soft is not None:
+                    beta = float(self.args.soft_beta)
+                    target = (1.0 - beta) * target + beta * soft
+                return audio_image, torch.from_numpy(np.concatenate([[np.float32(label)], target]).astype(np.float32))
             if self.args.meta_mode == 'none':
                 return audio_image, torch.tensor(label)
             else:

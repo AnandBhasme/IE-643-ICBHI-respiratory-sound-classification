@@ -1,14 +1,21 @@
+# Core (training, generation, evaluation). Install a PyTorch / TorchAudio / TorchVision build that matches your CUDA first:
+#   CUDA 11.8: pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+#   CPU only : pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cpu
+# (the versions used for the report; newer builds should work for inference but are untested)
+numpy<2
+scipy
 pandas
-nlpaug
-audiomentations
-timm==0.4.5
-wget
-seaborn
-tqdm
-librosa
-numpy
-tensorboard
+scikit-learn
 matplotlib
 soundfile
-scikit-learn
-scipy
+timm==0.4.5
+wget
+tqdm
+pillow
+tensorboard
+# legacy DiffWave / AFT code paths (Classification/util, Diffwave/) import these
+librosa
+nlpaug
+audiomentations
+seaborn
+pytest

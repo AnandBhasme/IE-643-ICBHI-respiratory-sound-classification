@@ -1,0 +1,8 @@
+{
+  "_comment": "Training arms of the final phase. mix: none | real_dup | synth. mode as in SpecDiff/build_mix.py. pool = folder under artifacts/specdiff/pools. soft = synthetic rows get the real-only teacher ensemble as soft label. seeds = number of seeds of the full run.",
+  "M0":   {"mix": "none",     "seeds": 10, "about": "real data only (baseline)"},
+  "M1b":  {"mix": "real_dup", "mode": "balance", "seeds": 5, "about": "real cycles duplicated up to the normal count (control: no synthetic data)"},
+  "M3":   {"mix": "synth",    "mode": "balance", "pool": "full_s50000_w3.5_empirical", "soft": false, "seeds": 10, "about": "SpecDiff cycles fill every class up to the normal count"},
+  "K3":   {"mix": "synth",    "mode": "balance", "pool": "full_s50000_w3.5_empirical", "soft": true,  "seeds": 5,  "about": "as M3, soft labels from the real-only teacher"},
+  "T_K3": {"mix": "synth",    "mode": "balance", "pool": "full_tt_s20000_w2.0_target", "soft": true,  "seeds": 10, "about": "transductive generator (unlabelled test audio), test-device mix, soft labels; the final arm"}
+}

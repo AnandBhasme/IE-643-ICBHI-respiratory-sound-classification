@@ -80,8 +80,15 @@ def parse_args():
                         help='fill-to-N target recorded for synthetic-mix experiments')
     parser.add_argument('--synth_version', type=str, default='',
                         help='synthetic pool version recorded in run metadata')
+    parser.add_argument('--extra_manifest', type=str, default=None,
+                        help='CSV (kind,source,index,label) of extra training items: generated log-mels from a '
+                             '.npy pool (kind=synth) or duplicated real cycles (kind=real_dup)')
     parser.add_argument('--tag', type=str, default='',
                         help='tag for experiment name')
+    parser.add_argument('--soft_extra', action='store_true',
+                        help='synthetic --extra_manifest rows carry teacher soft labels (column teacher); plain CE path only')
+    parser.add_argument('--soft_beta', type=float, default=1.0,
+                        help='weight of the teacher soft label against the intended class for synthetic rows')
     parser.add_argument('--resume', type=str, default=None,
                         help='path of model checkpoint to resume')
     parser.add_argument('--eval', action='store_true',
@@ -326,11 +333,9 @@ def set_loader(args):
     else:
         raise NotImplemented    
     
-    train_labels = []
-    for path in train_dataset.data_glob:
-        stem = os.path.basename(path).rsplit('.wav', 1)[0]
-        label_token = stem.split('_')[-2] if '_index=' in stem else stem.split('_')[-1]
-        train_labels.append(int(label_token))
+    # Labels come from the loaded items (identical to the filename labels for
+    # real / legacy-synthetic WAVs; also covers --extra_manifest items).
+    train_labels = [int(item[1]) for item in train_dataset.audio_images]
     class_counts = np.bincount(train_labels, minlength=args.n_cls).astype(np.int64)
     if len(train_labels) != len(train_dataset) or np.any(class_counts == 0):
         raise AssertionError(f'Invalid training class counts from dataset paths: {class_counts.tolist()}')
@@ -557,6 +562,11 @@ def train(train_loader, model, classifier, projector, criterion, optimizer, epoc
             meta_labels = labels[1].cuda(non_blocking=True)
         else:
             labels = labels.cuda(non_blocking=True)
+        soft_targets = None
+        if getattr(args, 'soft_extra', False):
+            assert args.method == 'ce' and not args.adversarial_ft, '--soft_extra supports the plain CE path only'
+            soft_targets = labels[:, 1:].float()
+            labels = labels[:, 0].long()
         bsz = class_labels.shape[0] if args.adversarial_ft else labels.shape[0]
         
         
@@ -570,6 +580,10 @@ def train(train_loader, model, classifier, projector, criterion, optimizer, epoc
                 else:
                     ma_ckpt = [deepcopy(model.state_dict()), deepcopy(classifier.state_dict()), deepcopy(projector.state_dict())]
                     lamb = None
+        if args.adversarial_ft and lamb is None:
+            # gradient-reversal weight (same DANN schedule as the ma_update branch)
+            p = float(idx + epoch * len(train_loader)) / args.epochs + 1 / len(train_loader)
+            lamb = 2. / (1. + np.exp(-10 * p)) - 1
 
         warmup_learning_rate(args, epoch, idx, len(train_loader), optimizer)
 
@@ -595,7 +609,10 @@ def train(train_loader, model, classifier, projector, criterion, optimizer, epoc
                 
                 else:
                     output = classifier(features)
-                    loss = criterion[0](output, labels)
+                    if soft_targets is not None:
+                        loss = -(soft_targets * torch.log_softmax(output.float(), dim=1)).sum(dim=1).mean()
+                    else:
+                        loss = criterion[0](output, labels)
                     
 
             elif args.method == 'patchmix':

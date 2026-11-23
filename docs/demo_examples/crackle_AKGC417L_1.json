@@ -1,0 +1,42 @@
+{
+ "requested": "crackle",
+ "device": "AKGC417L",
+ "nearest_real": {
+  "label": 1,
+  "device": "AKGC417L",
+  "filename": "156_8b3_Ll_mc_AKGC417L_event_0_label_1.wav",
+  "duration": 2.25
+ },
+ "classifiers": {
+  "T_K3 (SpecDiff + soft labels, final model)": {
+   "synthetic": {
+    "normal": 0.0009,
+    "crackle": 0.9987,
+    "wheeze": 0.0,
+    "both": 0.0003
+   },
+   "nearest_real": {
+    "normal": 0.0247,
+    "crackle": 0.9746,
+    "wheeze": 0.0,
+    "both": 0.0006
+   },
+   "synthetic_recognised_as_requested": true
+  },
+  "M0 (real data only, baseline)": {
+   "synthetic": {
+    "normal": 0.0002,
+    "crackle": 0.9997,
+    "wheeze": 0.0,
+    "both": 0.0001
+   },
+   "nearest_real": {
+    "normal": 0.0045,
+    "crackle": 0.9812,
+    "wheeze": 0.001,
+    "both": 0.0132
+   },
+   "synthetic_recognised_as_requested": true
+  }
+ }
+}

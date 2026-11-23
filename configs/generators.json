@@ -1,0 +1,11 @@
+{
+  "_comment": "Generators of the final phase (SpecDiff/train.py). gen_full: class/stethoscope/duration-conditional diffusion on the 4,142 official-train cycles; the 30k and 50k EMA checkpoints are used. gen_full_tt: fine-tuned from gen_full ema-30000 with the 2,756 unlabelled test cycles (class = null) mixed in (transductive).",
+  "gen_full": {"steps": 50000, "save_every": 10000, "args": ""},
+  "gen_full_tt": {"steps": 20000, "save_every": 5000,
+                  "args": "--init_ckpt {A}/specdiff/gen_full/ema-30000.pt --lr 1e-4 --warmup 500 --ema 0.999 --shift_aug 1 --unlabelled_cache {C}/test.npz --unlabelled_frac 0.3"},
+  "pools": {
+    "full_s50000_w3.5_empirical": {"gen": "gen_full", "step": 50000, "per_class": "2100,2950,3650,3800", "guidance": 3.5, "policy": "empirical", "extra": ""},
+    "full_tt_s20000_w2.0_target": {"gen": "gen_full_tt", "step": 20000, "per_class": "2100,2100,2100,2100", "guidance": 2.0, "policy": "target", "extra": "--target_cache {C}/test.npz"}
+  },
+  "teacher_seeds": [1, 2, 3, 4, 5]
+}

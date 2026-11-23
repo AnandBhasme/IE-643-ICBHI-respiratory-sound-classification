@@ -58,7 +58,9 @@ def main():
     show = [r for r in ensembles if r["ensemble"] != "Petmezas-3seed"]
     fig, axes = plt.subplots(2, 4, figsize=(12, 6.4))
     for ax, row in zip(axes.flat, show):
-        cm = np.loadtxt(root / "artifacts/results/wp6_final" / f"{row['ensemble']}_confusion_last.csv", delimiter=",")
+        with (root / "artifacts/results/wp6_final" / f"{row['ensemble']}_confusion_last.csv").open(newline="", encoding="utf-8") as f:
+            matrix_rows = list(csv.reader(f))[1:]
+        cm = np.asarray([[int(value) for value in matrix_row[1:]] for matrix_row in matrix_rows], dtype=np.int64)
         ax.imshow(cm, cmap="Blues")
         ax.set_title(row["ensemble"], fontsize=9)
         ax.set_xticks(range(4), ["N", "C", "W", "B"], fontsize=7)

@@ -4,12 +4,11 @@ from __future__ import annotations
 
 import argparse
 import csv
-import os
 from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(os.environ.get("IE643_PROJECT_ROOT", Path(__file__).resolve().parents[1]))
+ROOT = Path(__file__).resolve().parents[4]
 
 
 def member_names():
@@ -98,7 +97,11 @@ def main():
         row.update(metric)
         rows.append(row)
         np.save(a.output_dir / f"{name}_probs_last.npy", probs.astype(np.float32))
-        np.savetxt(a.output_dir / f"{name}_confusion_last.csv", cm, fmt="%d", delimiter=",")
+        with (a.output_dir / f"{name}_confusion_last.csv").open("w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["true_class", "normal", "crackle", "wheeze", "both"])
+            for class_name, values in zip(("normal", "crackle", "wheeze", "both"), cm):
+                writer.writerow([class_name, *[int(value) for value in values]])
     with (a.output_dir / "wp6_final_ensembles.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader(); w.writerows(rows)

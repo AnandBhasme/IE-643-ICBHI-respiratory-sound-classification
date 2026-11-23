@@ -1,0 +1,47 @@
+[skip] data_split (output exists)
+[skip] data_cache (output exists)
+[run ] arm_M0_s1
+Training for 1 epochs on icbhi dataset
+ * S_p: 65.04, S_e: 42.23, Score: 53.63 (Best S_p: 65.04, S_e: 42.23, Score: 53.63)
+ * S_p: 65.04, S_e: 42.23, Score: 53.63 (Best S_p: 65.04, S_e: 42.23, Score: 53.63)
+best Score: [65.04, 42.23, 53.63] (sp, se, sc)
+[run ] gen_full
+finished at step 600
+[run ] gen_full_tt
+finished at step 200
+[run ] pool_full_s50000_w3.5_empirical
+wrote 1740 samples to artifacts/specdiff/pools/quick_full_s50000_w3.5_empirical
+[run ] gate_full_s50000_w3.5_empirical
+  syn_intended_acc=float((syn_pred[s] == c).mean()),
+class        n  syn_acc real_ref_recall   KID_syn  KID_real nn_ratio
+mean intended acc nan  mean KID nan
+[run ] pool_full_tt_s20000_w2.0_target
+wrote 1740 samples to artifacts/specdiff/pools/quick_full_tt_s20000_w2.0_target
+[run ] gate_full_tt_s20000_w2.0_target
+  syn_intended_acc=float((syn_pred[s] == c).mean()),
+class        n  syn_acc real_ref_recall   KID_syn  KID_real nn_ratio
+mean intended acc nan  mean KID nan
+[run ] teacher
+[run ] arm_M1b_s1
+Training for 1 epochs on icbhi dataset
+ * S_p: 57.12, S_e: 47.49, Score: 52.31 (Best S_p: 57.12, S_e: 47.49, Score: 52.31)
+ * S_p: 57.12, S_e: 47.49, Score: 52.31 (Best S_p: 57.12, S_e: 47.49, Score: 52.31)
+best Score: [57.12, 47.49, 52.31] (sp, se, sc)
+[run ] arm_M3_s1
+Training for 1 epochs on icbhi dataset
+ * S_p: 62.89, S_e: 42.74, Score: 52.81 (Best S_p: 62.89, S_e: 42.74, Score: 52.81)
+ * S_p: 62.89, S_e: 42.74, Score: 52.81 (Best S_p: 62.89, S_e: 42.74, Score: 52.81)
+best Score: [62.89, 42.74, 52.81] (sp, se, sc)
+[run ] arm_K3_s1
+Training for 1 epochs on icbhi dataset
+ * S_p: 58.90, S_e: 47.58, Score: 53.24 (Best S_p: 58.90, S_e: 47.58, Score: 53.24)
+ * S_p: 58.90, S_e: 47.58, Score: 53.24 (Best S_p: 58.90, S_e: 47.58, Score: 53.24)
+best Score: [58.9, 47.58, 53.24] (sp, se, sc)
+[run ] arm_T_K3_s1
+Training for 1 epochs on icbhi dataset
+ * S_p: 59.09, S_e: 47.32, Score: 53.21 (Best S_p: 59.09, S_e: 47.32, Score: 53.21)
+ * S_p: 59.09, S_e: 47.32, Score: 53.21 (Best S_p: 59.09, S_e: 47.32, Score: 53.21)
+best Score: [59.09, 47.32, 53.21] (sp, se, sc)
+[run ] evaluate
+wrote results/quick
+exit 0

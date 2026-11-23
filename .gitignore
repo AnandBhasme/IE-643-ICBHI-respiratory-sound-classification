@@ -15,3 +15,18 @@ pretrained_models/
 hpc/logs/
 *.out
 *.err
+
+# --- exceptions: small files that ARE tracked ---
+!results/saved/probs/*.npy
+!demo/assets/*.npz
+!weights/weights_manifest.json
+!weights/SHA256SUMS
+weights/*.pth
+weights/*.pt
+results/latest/
+results/quick/
+results/reproduced/
+pymp-*/
+
+/artifacts
+artifacts

@@ -1,0 +1,154 @@
+{
+  "classifier_M0_seed1.pth": {
+    "sha256": "e12aa54770835b82f7d14cd280fc0394513c6c86c3de61ec4f3c716155194a6b",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-v1/classifier_M0_seed1.pth",
+    "source": "artifacts/runs_nov/icbhi_ast_ce_nov_final_M0_seed1/last.pth",
+    "bytes": 175375711,
+    "release": "weights-v1",
+    "dest": "classifier_M0_seed1.pth"
+  },
+  "classifier_T_K3_seed1.pth": {
+    "sha256": "2433c53ae8f696552d04fe97b7c20db1461957a29c021f1a8194ab377ab376bb",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-v1/classifier_T_K3_seed1.pth",
+    "source": "artifacts/runs_nov/icbhi_ast_ce_nov_final_T_K3_seed1/last.pth",
+    "bytes": 175376049,
+    "release": "weights-v1",
+    "dest": "classifier_T_K3_seed1.pth"
+  },
+  "specdiff_generator.pt": {
+    "sha256": "4dcdd2de025bead359ccabf6f121edbf821598aa1a08d551d1ccfa60ebafdc92",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-v1/specdiff_generator.pt",
+    "source": "artifacts/specdiff/gen_full/ema-50000.pt",
+    "bytes": 104057647,
+    "release": "weights-v1",
+    "dest": "specdiff_generator.pt"
+  },
+  "classifier_C4_seed1.pth": {
+    "sha256": "605c290c9402dd799795e2f9761fe9b5c06fcde6b66ed8d96afc9fc69b152d79",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-v1/classifier_C4_seed1.pth",
+    "source": "Primary_Intensive_Assessment/handoff/demo/models/C4_seed1_last.pth (intensive phase, seed 1, last epoch)",
+    "bytes": 350696952,
+    "release": "weights-v1",
+    "dest": "classifier_C4_seed1.pth"
+  },
+  "icbhi_ast_ce_wp3_C0_seed1_bf16.pth": {
+    "sha256": "34518eefd7fc576712b1e5b387666b853b1d9eb8fcc7b33b95e672b45f746ac3",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C0_seed1_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C0_seed1_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C0_seed1_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C0_seed2_bf16.pth": {
+    "sha256": "7228158b2f461d3ed4fee64475733234c752f64996163d690dde1f3c9515e69e",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C0_seed2_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C0_seed2_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C0_seed2_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C0_seed3_bf16.pth": {
+    "sha256": "bf87ff070bc42b0256c4bc9ac05c824bea15119ea6db27adb4e723da51b44eaa",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C0_seed3_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C0_seed3_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C0_seed3_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C1_seed1_bf16.pth": {
+    "sha256": "ec8dce783d3f8f8f42acfd9797774ad73f7b284d20b433ac5c591a0c4ac15182",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C1_seed1_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C1_seed1_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C1_seed1_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C1_seed2_bf16.pth": {
+    "sha256": "94e2a5a8b3388629aeffa40e0fc8c63ac4cfe9e1914e739a8f28740ba3094430",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C1_seed2_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C1_seed2_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C1_seed2_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C1_seed3_bf16.pth": {
+    "sha256": "1380077bfc4fefec005e7a529aa75789b8ea8d2c4029f2ead621badb29f74bd4",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C1_seed3_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C1_seed3_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C1_seed3_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C2_seed1_bf16.pth": {
+    "sha256": "6987bdbb44b6ab7da47a83223a71403ea1996f0af457f176b35b28d20ea3a3ae",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C2_seed1_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C2_seed1_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C2_seed1_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C2_seed2_bf16.pth": {
+    "sha256": "e86e22f5d2d91fee6bf1ce9abafd898c68104def9116b841f5bae40030a47a7c",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C2_seed2_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C2_seed2_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C2_seed2_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C2_seed3_bf16.pth": {
+    "sha256": "61f48f353baf5a56e9e1bb526e70b45b0004886c83fef1fda27e6b1ebb92e348",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C2_seed3_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C2_seed3_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C2_seed3_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C3_seed1_bf16.pth": {
+    "sha256": "ec8dce783d3f8f8f42acfd9797774ad73f7b284d20b433ac5c591a0c4ac15182",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C3_seed1_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C3_seed1_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C3_seed1_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C3_seed2_bf16.pth": {
+    "sha256": "94e2a5a8b3388629aeffa40e0fc8c63ac4cfe9e1914e739a8f28740ba3094430",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C3_seed2_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C3_seed2_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C3_seed2_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_ce_wp3_C3_seed3_bf16.pth": {
+    "sha256": "1380077bfc4fefec005e7a529aa75789b8ea8d2c4029f2ead621badb29f74bd4",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_ce_wp3_C3_seed3_bf16.pth",
+    "dest": "intensive/icbhi_ast_ce_wp3_C3_seed3_bf16/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_ce_wp3_C3_seed3_bf16/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_patchmix_cl_wp3_C4_seed1_bf16_retry1.pth": {
+    "sha256": "605c290c9402dd799795e2f9761fe9b5c06fcde6b66ed8d96afc9fc69b152d79",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_patchmix_cl_wp3_C4_seed1_bf16_retry1.pth",
+    "dest": "intensive/icbhi_ast_patchmix_cl_wp3_C4_seed1_bf16_retry1/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_patchmix_cl_wp3_C4_seed1_bf16_retry1/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_patchmix_cl_wp3_C4_seed2_bf16_retry2.pth": {
+    "sha256": "29cfca1c081abebf9e298af480bcef8761ac4f07005bd8624bded257fafc1dd7",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_patchmix_cl_wp3_C4_seed2_bf16_retry2.pth",
+    "dest": "intensive/icbhi_ast_patchmix_cl_wp3_C4_seed2_bf16_retry2/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_patchmix_cl_wp3_C4_seed2_bf16_retry2/last.pth (intensive phase)",
+    "bytes": 350696952
+  },
+  "icbhi_ast_patchmix_cl_wp3_C4_seed3_bf16_retry2.pth": {
+    "sha256": "2b005284d52aa24cfb71d1aaa0231b36ed7c6141924a23a62fc736ba66709f63",
+    "url": "https://github.com/AnandBhasme/IE-643-ICBHI-respiratory-sound-classification/releases/download/weights-intensive-v1/icbhi_ast_patchmix_cl_wp3_C4_seed3_bf16_retry2.pth",
+    "dest": "intensive/icbhi_ast_patchmix_cl_wp3_C4_seed3_bf16_retry2/last.pth",
+    "release": "weights-intensive-v1",
+    "source": "ensemble_weights/icbhi_ast_patchmix_cl_wp3_C4_seed3_bf16_retry2/last.pth (intensive phase)",
+    "bytes": 350696952
+  }
+}

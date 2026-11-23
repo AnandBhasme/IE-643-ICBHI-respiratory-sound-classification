@@ -2,7 +2,6 @@ from collections import namedtuple
 import os
 import math
 import random
-from tkinter import W
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
