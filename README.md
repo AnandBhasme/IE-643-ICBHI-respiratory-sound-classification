@@ -66,8 +66,10 @@ Set `IE643_INTENSIVE_DIR` to use intensive-phase checkpoints from another folder
 Ensembles load their members one at a time, so they need little more memory than a single model. Models whose files are missing
 are listed as "not installed", with the command that installs them.
 
-**Preselected cycles** are chosen by `scripts/make_demo_samples.py` from the official test list (two per class). They are read from
-`artifacts/data/official_icbhi/test/real/`, which the data stage creates, so the ICBHI recordings are not copied into the repository.
+**Preselected cycles.** Eight cycles, two per class, are listed in `demo/samples.json` (written by `scripts/make_demo_samples.py`).
+Four come from the official test list and four from the training recordings; the demo shows which. They are read from
+`artifacts/data/official_icbhi/{test,training}/real/`, which the data stage creates, so the ICBHI recordings are not copied into
+the repository.
 
 Command line without the web UI: `python demo/cli.py classify rec.wav [--model T_K3|M0|C4|ENS-AST] [--no-correction]`,
 `python demo/cli.py generate --cls wheeze --out out/`, `python demo/cli.py check --n 8 --model M0`.

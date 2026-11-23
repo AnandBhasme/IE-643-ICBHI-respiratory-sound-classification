@@ -1,58 +1,58 @@
 [
  {
-  "file": "147_1b3_Tc_mc_AKGC417L_event_5_label_0.wav",
+  "file": "130_2p5_Tc_mc_AKGC417L_event_9_label_0.wav",
+  "split": "training",
   "label": 0,
   "class_name": "normal",
-  "device": "AKGC417L",
-  "split": "official test"
+  "device": "AKGC417L"
  },
  {
-  "file": "178_2b2_Pr_mc_AKGC417L_event_9_label_0.wav",
+  "file": "151_2p2_Ar_mc_AKGC417L_event_3_label_0.wav",
+  "split": "test",
   "label": 0,
   "class_name": "normal",
-  "device": "AKGC417L",
-  "split": "official test"
+  "device": "AKGC417L"
  },
  {
-  "file": "174_1p3_Ar_mc_AKGC417L_event_3_label_1.wav",
+  "file": "130_2p3_Pl_mc_AKGC417L_event_9_label_1.wav",
+  "split": "training",
   "label": 1,
   "class_name": "crackle",
-  "device": "AKGC417L",
-  "split": "official test"
+  "device": "AKGC417L"
  },
  {
-  "file": "177_2b4_Pl_mc_AKGC417L_event_1_label_1.wav",
+  "file": "138_1p3_Pl_mc_AKGC417L_event_4_label_1.wav",
+  "split": "training",
   "label": 1,
   "class_name": "crackle",
-  "device": "AKGC417L",
-  "split": "official test"
+  "device": "AKGC417L"
  },
  {
-  "file": "149_1b1_Al_sc_Meditron_event_12_label_2.wav",
+  "file": "118_1b1_Al_sc_Litt3200_event_5_label_2.wav",
+  "split": "test",
   "label": 2,
   "class_name": "wheeze",
-  "device": "Meditron",
-  "split": "official test"
+  "device": "Litt3200"
  },
  {
-  "file": "178_1b2_Al_mc_AKGC417L_event_4_label_2.wav",
+  "file": "178_1b2_Pr_mc_AKGC417L_event_7_label_2.wav",
+  "split": "test",
   "label": 2,
   "class_name": "wheeze",
-  "device": "AKGC417L",
-  "split": "official test"
+  "device": "AKGC417L"
  },
  {
-  "file": "156_2b3_Pl_mc_AKGC417L_event_3_label_3.wav",
+  "file": "130_3p4_Tc_mc_AKGC417L_event_0_label_3.wav",
+  "split": "training",
   "label": 3,
   "class_name": "both",
-  "device": "AKGC417L",
-  "split": "official test"
+  "device": "AKGC417L"
  },
  {
-  "file": "175_1b1_Al_sc_Litt3200_event_1_label_3.wav",
+  "file": "218_1b1_Al_sc_Meditron_event_10_label_3.wav",
+  "split": "test",
   "label": 3,
   "class_name": "both",
-  "device": "Litt3200",
-  "split": "official test"
+  "device": "Meditron"
  }
 ]

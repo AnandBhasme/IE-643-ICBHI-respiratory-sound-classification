@@ -26,7 +26,12 @@ from engine import CLASSES, Engine, comparison_figure, logmel_figure, probabilit
 
 ROOT = HERE.parent
 SAMPLES = json.loads((HERE / 'samples.json').read_text())
-SAMPLE_DIR = ROOT / 'artifacts/data/official_icbhi/test/real'
+DATA_DIR = ROOT / 'artifacts/data/official_icbhi'
+
+
+def sample_path(sample):
+    """Where a preselected clip lives: the test or the training folder of the prepared data."""
+    return DATA_DIR / sample['split'] / 'real' / sample['file']
 DEVICE_CHOICES = ['AKGC417L', 'Meditron', 'Litt3200', 'LittC2SE']
 DEFAULT_MODEL = 'T_K3'
 DISCLAIMER = ('Research prototype for a course project (IE 643). Not a medical device. The best model reaches about 59.6 Score '
@@ -90,7 +95,7 @@ def build():
 
     model_choices = [(m['label'] + ('' if installed(m) else '  (not installed)'), m['id']) for m in MODELS]
     generator_ok = Engine.generator_available()
-    sample_files = [(str(SAMPLE_DIR / s['file']), s) for s in SAMPLES if (SAMPLE_DIR / s['file']).is_file()]
+    sample_files = [(str(sample_path(s)), s) for s in SAMPLES if sample_path(s).is_file()]
 
     # ------------------------------------------------------------------ classify
     def classify_fn(wav, mid, device, corrected):
@@ -113,8 +118,9 @@ def build():
         return model_card(mid)
 
     def sample_table():
-        head = '| File | True class | Stethoscope |\n|---|---|---|\n'
-        return head + ''.join(f'| `{s["file"]}` | {s["class_name"]} | {s["device"]} |\n' for s in SAMPLES)
+        head = '| File | True class | Stethoscope | Taken from |\n|---|---|---|---|\n'
+        where = {'test': 'official test list', 'training': 'training recordings'}
+        return head + ''.join(f'| `{s["file"]}` | {s["class_name"]} | {s["device"]} | {where[s["split"]]} |\n' for s in SAMPLES)
 
     # ------------------------------------------------------------------ generate and compare
     def generate_fn(cls, device_name, duration, guidance, steps, seed, mid, corrected):
@@ -195,9 +201,10 @@ def build():
                         probs = gr.Plot(label='Probabilities')
                         mel = gr.Plot(label='Input spectrogram')
 
-                gr.HTML('<div class="ie-section">Preselected official test cycles</div>')
+                gr.HTML('<div class="ie-section">Preselected cycles</div>')
                 if sample_files:
-                    gr.Markdown('Click a cycle to load it, then press **Classify**. Two cycles per class, from the official test set.')
+                    gr.Markdown('Click a cycle to load it, then press **Classify**. Two cycles per class. Four are from the official '
+                                'test list and four from the training recordings, as the table shows.')
                     gr.Examples(examples=[[p] for p, _ in sample_files], inputs=[wav], label=None, examples_per_page=8)
                     gr.Markdown(sample_table())
                 else:
@@ -294,7 +301,7 @@ def main():
     print(f'classifiers installed: {Engine.available_classifiers()} | generator: {Engine.generator_available()}', flush=True)
     demo = build()
     demo.queue().launch(server_name=a.host, server_port=a.port, share=a.share,
-                        allowed_paths=[str(SAMPLE_DIR)] if SAMPLE_DIR.is_dir() else None)
+                        allowed_paths=[str(DATA_DIR)] if DATA_DIR.is_dir() else None)
 
 
 if __name__ == '__main__':
